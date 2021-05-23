@@ -1,6 +1,6 @@
 # Simple web application - Country management
 
-Service for founding the cheapest flight between cities.
+Country informations and management
 
 ## Technologies
 - Programing language: PHP 

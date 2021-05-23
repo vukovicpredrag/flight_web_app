@@ -33,7 +33,16 @@ Create a copy of your .env file
 ```bash
 cp .env.example .env
 ```
-Run migrations
+*insert your database information (DB_PORT; DB_DATABASE; DB_USERNAME;DB_PASSWORD)
+
+
+
+Generate an app encryption key
+
+```bash
+php artisan key:generate
+```
+Run database migrations
 
 ```bash
 php artisan migrate
@@ -41,7 +50,7 @@ php artisan migrate
 
 
 ## Usage
-Manage with countries from  country list
+Manage countries from  country list
 
 Users are able to:
 ```
@@ -54,7 +63,6 @@ Users are able to:
 
 ```
 
-## Local url path
-http://localhost/flightAdvisor/public/login
+
 
 

@@ -1,0 +1,26 @@
+/*
+* Application global CSS
+*/
+.comments{
+    cursor:pointer;
+    color:#0000CD;
+}
+
+.comments_box{
+    margin: 10px;
+}
+
+
+.map-container{
+    width: 100%;
+    height: 300px;
+    margin: 20px;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+
+

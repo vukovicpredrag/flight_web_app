@@ -11,9 +11,13 @@ namespace App\Helper;
 class CountryHelper{
 
 
-    private $allCountriesUrl     = 'https://restcountries.eu/rest/v2/all';
+    private $allCountriesUrl      = 'https://restcountries.eu/rest/v2/all';
 
-    private $definedCountriesUrl ='https://restcountries.eu/rest/v2/alpha?codes=';
+    private $definedCountriesUrl  = 'https://restcountries.eu/rest/v2/alpha?codes=';
+
+    private $currencyExchangeRate = 'https://api.exchangerate.host/latest';
+
+
 
 
     public function getCountruesAll()
@@ -55,6 +59,28 @@ class CountryHelper{
 
         return $response;
 
+
+    }
+
+    /**
+     * Get currency exchange rate based EUR
+     */
+    public function currencyExchangeRate()
+    {
+
+        $url = $this->currencyExchangeRate;
+
+        // create curl resource
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $output = curl_exec($ch);
+
+        curl_close($ch);
+
+        $response = json_decode($output);
+
+        return $response;
 
     }
 

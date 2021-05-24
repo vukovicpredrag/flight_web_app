@@ -130,7 +130,12 @@ class CountryController extends Controller
 
         $countryDetails = $countryHelper->getSelectedCountrues($selected)[0] ?: '';
 
-        return view('country.details', ['countries' => $countries, 'countryDetails' => $countryDetails]);
+        // Get exchange rate EUR
+        $currencyCode = $countryDetails->currencies[0]->code;
+        $currencyExchangeRate = $countryHelper->currencyExchangeRate();
+        $exchangeRate = $currencyExchangeRate->rates->$currencyCode;
+
+        return view('country.details', ['countries' => $countries, 'countryDetails' => $countryDetails, 'exchangeRate' => $exchangeRate]);
 
     }
 

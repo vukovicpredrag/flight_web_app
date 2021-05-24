@@ -38,8 +38,18 @@
 
     @if($countryDetails)
 
-            <div class="col-md-6">
+            <div class="col-md-4">
                  <img src="{{$countryDetails->flag}}" width="300" height="200">
+            </div>
+
+
+            <div class="col-md-4" style="border: 1px solid black">
+                <p>Currency:</p>
+                <p>Name: <b>{{$countryDetails->currencies[0]->name}}</b></p>
+                <p>Code: <b>{{$countryDetails->currencies[0]->code}}</b></p>
+                <p>Symbol: <b>{{$countryDetails->currencies[0]->symbol}}</b></p>
+                <p><i> 1 EUR = {!! round($exchangeRate, 2) !!} {{$countryDetails->currencies[0]->code}} </i></p>
+
             </div>
 
         </div><br>

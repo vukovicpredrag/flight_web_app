@@ -60,6 +60,8 @@ Users are able to:
 ● Write a comment
 ● Get country information
 ● Get position on the map
+● Get currency information
+
 
 ```
 

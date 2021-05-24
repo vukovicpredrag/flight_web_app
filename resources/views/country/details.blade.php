@@ -48,8 +48,9 @@
                 <p>Name: <b>{{$countryDetails->currencies[0]->name}}</b></p>
                 <p>Code: <b>{{$countryDetails->currencies[0]->code}}</b></p>
                 <p>Symbol: <b>{{$countryDetails->currencies[0]->symbol}}</b></p>
-                <p><i> 1 EUR = {!! round($exchangeRate, 2) !!} {{$countryDetails->currencies[0]->code}} </i></p>
-
+                @if($countryDetails->currencies[0]->code != 'EUR')
+                    <p><i><b> 1 EUR = {!! round($exchangeRate, 2) !!} {{$countryDetails->currencies[0]->code}} </b></i></p>
+                @endif
             </div>
 
         </div><br>

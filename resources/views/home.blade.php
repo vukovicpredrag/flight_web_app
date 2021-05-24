@@ -57,11 +57,9 @@
          var userId       = favoritesBtn.data('user-id');
          var favorite     = buttonText == "Add to favorites" ? 1 : 0;
 
-
          //toggle btn text and classes
          favoritesBtn.text(buttonText == "Add to favorites" ? "Remove from favorites" : "Add to favorites");
          favoritesBtn.toggleClass("btn-primary btn-warning");
-
         
          $.ajax({
              url: "{{ route('country.favorite.manage') }}",
